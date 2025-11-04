@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color-scheme: dark;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1f2933 0, #020617 45%, #000000 100%);
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.cabecera {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.cabecera::before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, #00b050, #ffffff, #b91c1c);
+    border-radius: 4px;
+}
+
+.cabecera__titulo h1 {
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #f97373;
+}
+
+.cabecera__titulo p {
+    margin-top: 0.5rem;
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+.principal {
+    width: 100%;
+    max-width: 600px;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.bloque {
+    background: rgba(15, 23, 42, 0.95);
+    border-radius: 0.9rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid #1f2937;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+}
+
+.bloque--formulario {
+    backdrop-filter: blur(10px);
+}
+
+.bloque--resultados h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #f9fafb;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.campo__label {
+    font-size: 0.9rem;
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.campo__input {
+    padding: 0.55rem 0.7rem;
+    border-radius: 0.6rem;
+    border: 1px solid #374151;
+    background: rgba(15, 23, 42, 0.9);
+    color: #f9fafb;
+    font-size: 0.95rem;
+}
+
+.campo__input:focus {
+    outline: none;
+    border-color: #00b050;
+    box-shadow: 0 0 0 1px rgba(0, 176, 80, 0.5);
+}
+
+.campo__input::placeholder {
+    color: #6b7280;
+}
+
+.acciones-formulario {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.boton {
+    border: none;
+    border-radius: 999px;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.boton--primario {
+    background: linear-gradient(135deg, #f97373, #b91c1c);
+    color: #fff5f5;
+    box-shadow: 0 12px 25px rgba(185, 28, 28, 0.45);
+}
+
+.boton--primario:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, #f97373, #00b050);
+    box-shadow: 0 16px 30px rgba(0, 176, 80, 0.55);
+}
+
+.boton--secundario {
+    background: transparent;
+    color: #e5e7eb;
+    border: 1px solid #4b5563;
+}
+
+.boton--secundario:hover {
+    background: rgba(31, 41, 55, 0.8);
+    border-color: #00b050;
+    color: #00b050;
+}
+
+.formulario__error {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: #fecaca;
+    min-height: 1.1em;
+}
+
+.resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: #e5e7eb;
+}
+
+.resultado {
+    border-radius: 0.7rem;
+    padding: 0.9rem 1rem;
+    background: linear-gradient(135deg, rgba(0, 176, 80, 0.15), rgba(15, 23, 42, 0.95));
+    border: 1px solid rgba(0, 176, 80, 0.4);
+    box-shadow: 0 0 18px rgba(0, 176, 80, 0.08);
+}
+
+.resultado p {
+    margin-bottom: 0.25rem;
+}
+
+.resultado p:last-child {
+    margin-bottom: 0;
+}
+
+.resultado strong {
+    color: #facc15;
+}
+
+.pie {
+    margin-top: 3rem;
+    max-width: 600px;
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.4;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
+}
+
+
+.pie small {
+    display: block;
+    margin-top: 0.8rem;
+    color: #9ca3af;
+}
+
+.img {
+    display: block;
+    margin: 2.5rem auto 1rem auto;
+    height: 160px;
+    opacity: 0.9;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.img:hover {
+    opacity: 1;
+    transform: scale(1.08);
+}
+

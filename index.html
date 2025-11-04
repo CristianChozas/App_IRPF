@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IRPF</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="cabecera">
+        <div class="cabecera__titulo">
+            <h1>Calculadora de IRPF</h1>
+            <p>Calcula el % de tu IRPF y tu sueldo neto en base a éste.</p>
+        </div>
+    </header>
+    <main class="principal">
+        <section class="bloque bloque--formulario">
+        <form id="form-irpf" name="form-irpf" class="formulario" autocomplete="off">
+            <div class="campo">
+                <label for="bruto" class="campo__label">Sueldo bruto anual (€)
+                    <input class="campo__input" id="bruto" name="bruto" type="number" min="0" step="100" placeholder="Ej: 32000" required>
+                </label>
+            </div>
+            <div class="campo">
+                <label for="pagas" class="campo__label">Número de pagas</label>
+                <select id="pagas" name="pagas" class="campo__input">
+                    <option value="12">12 pagas</option>
+                    <option value="13">13 pagas</option>
+                    <option value="14" selected>14 pagas</option>
+                    <option value="15">15 pagas</option>
+                </select>
+            </div>
+            <div class="acciones-formulario">
+                <button type="submit" class="boton boton--primario">Calcular</button>
+                <button type="button" id="btn-reset" class="boton boton--secundario">Limpiar</button>
+            </div>
+            <p id="mensaje-error" class="formulario__error" aria-live="polite"></p>
+        </form>
+        </section>
+        <section class="bloque bloque--resultados" aria-live="polite">
+            <h2>Resultado:</h2>
+            <div id="contenedor-resultados" class="resultados"></div>
+        </section>
+    </main>
+    <footer class="pie">
+        Esta aplicación no está avalada por Hacienda ni contempla la Comunidad Atónoma o la situación familiar del usuario. Por favor, revise los datos después de usar la aplicación.
+        <small>&copy; Cristian Chozas Díaz - Reservados todos los derechos 2025</small>
+        <img class="img" src="img/mv-agusta-f3-800-rc.jpg" alt="MV Augusta F3 RC">
+    </footer>
+</body>
+</html>
